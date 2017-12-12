@@ -1,0 +1,12 @@
+{
+  "name": "IM",
+  "version": "0.0.1",
+  "description": "即時通訊系統",
+  "dependencies": {
+    "express": "^4.15.2",
+    "socket.io": "^1.7.4"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
