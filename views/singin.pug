@@ -1,0 +1,19 @@
+doctype html
+html(lang='zh-Hant')
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    link(rel="shortcut icon" href="/images/chat.png")
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='https://getbootstrap.com/docs/4.0/examples/signin/signin.css')
+    script(src='/javascripts/jquery-3.2.1.min.js')
+  body
+    div(class="container")
+        form(class="form-signin" action="room" method="POST")
+            h2(class="form-signin-heading text-center") 聊天室暱稱
+            br
+            input(id="Nick" name="inputNick" class="form-control" placeholder="暱稱" required autofocus)
+            br
+            button(id="send" class="btn btn-lg btn-primary btn-block" type="submit") 進入聊天室
+            script(src='/javascripts/signin.js')

@@ -1,0 +1,19 @@
+doctype html
+html(lang='zh-Hant')
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    link(rel="shortcut icon" href="/images/chat.png")
+    script(src='/javascripts/jquery-3.2.1.min.js')
+    link(rel='stylesheet', href='/stylesheets/chat_room.css')
+
+  body
+    h3 目前再線人數 :
+      span(id="count") 0
+    ul(id="messages")
+    form
+        input(id="msg_input" autocomplete="off")
+        button Send
+    script(src='/javascripts/socket.io-1.2.0.js')
+    script(src='/javascripts/chat_room.js')
