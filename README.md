@@ -1,5 +1,10 @@
 # websocet 練習
 
+##2017/12/17
++ 使用 express-generator 結合 socket.io 聊天室。
++ 新增訊息發送時間。
++ 更新網頁使用 pug 模板，可自帶參數進網頁。
+
 ##2017/12/15
 + 新增暱稱輸入頁面並將暱稱用 sessionStorage 存起。
 + 使用 socket.id 作為暱稱索引修正離開房間時暱稱顯示錯誤問題。
