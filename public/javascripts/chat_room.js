@@ -28,4 +28,8 @@ $(function() {
         $('#count').text(data.count);
         // alert(data.num);
     });
+
+    //直播自動播放
+    var player = videojs('video');
+    player.play();
 });

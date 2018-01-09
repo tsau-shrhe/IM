@@ -12,6 +12,26 @@ var bodyParser = require('body-parser');
 // var index = require('./routes/index');
 // var users = require('./routes/users');
 var chat_server = require('./routes/chat_server');
+var member = require('./routes/member_r');
+
+// mysql
+var mysql = require("mysql");
+
+var con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "root",
+    database: "test"
+});
+
+con.connect(function(err) {
+    if (err) {
+        console.log('資料庫連線失敗');
+        return;
+    }
+    console.log('資料庫連線成功');
+});
+
 
 var app = express();
 
@@ -35,9 +55,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// db state
+app.use(function(req, res, next) {
+    req.con = con;
+    next();
+});
+
 // app.use('/', index); 預設
 // app.use('/users', users); 預設
 app.use('/', chat_server);
+app.use('/member', member);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

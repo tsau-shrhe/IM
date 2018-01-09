@@ -1,0 +1,21 @@
+doctype html
+html(lang='zh-Hant')
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    script(src='/javascripts/jquery-3.2.1.min.js')
+  body
+    table(class="table")
+      thead
+        tr
+          th 編號
+          th 姓名
+          th 性別
+      tbody
+        each val in data
+          tr
+            td= val.id
+            td= val.name
+            td= val.gender

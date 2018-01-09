@@ -7,13 +7,24 @@ html(lang='zh-Hant')
     link(rel="shortcut icon" href="/images/chat.png")
     script(src='/javascripts/jquery-3.2.1.min.js')
     link(rel='stylesheet', href='/stylesheets/chat_room.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/Video_6.0.4.css')
 
   body
-    h3 目前再線人數 :
-      span(id="count") 0
-    ul(id="messages")
-    form
-        input(id="msg_input" autocomplete="off")
-        button Send
+    div(class="container-fluid")
+      div(class="row")
+        div(class="col-md-6")
+          h3(class="col-md-12") 目前再線人數 :
+            span(id="count") 0
+          div(class="col-md-12")
+          ul(id="messages")
+          form
+            input(id="msg_input" autocomplete="off")
+            button Send
+        video(id="video" class="video col-md-6 video-js vjs-default-skin" controls)
+          source(src="http://tw-stream02.goe-live.com/goinlive/851/index.m3u8" type="application/x-mpegURL")
+
+    script(src='/javascripts/Video_6.0.4.js')
+    script(src='/javascripts/Videojs-contrib-hls_5.12.2.js')
     script(src='/javascripts/socket.io-1.2.0.js')
     script(src='/javascripts/chat_room.js')
